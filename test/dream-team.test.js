@@ -224,7 +224,7 @@ describe('Dream team', () => {
         },
         'Erazim Kohak',
         '  val_plumwood',
-      ]), 'BDETV');
+      ]), 'BETDV');
     });
   });
 });
