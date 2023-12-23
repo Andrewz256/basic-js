@@ -22,26 +22,24 @@ const { NotImplementedError } = require('../extensions/index.js');
  * }
  *
  */
-function getDNSStats(/* domains */) {
-  // let strDNS = domains.map((str) => str.split('.').reverse());
-  // let domain = [];
+function getDNSStats(domains) {
+  let strDNS = domains.map((str) => str.split('.').reverse());
+  let domain = [];
   
-  // strDNS.forEach((matrixstring) => {
-  //   for (let i = 0; i < matrixstring.length; i++) {
-  //     domain.push(matrixstring[i]);
-  //   }
-  // });
-
-  // let uniq = domain.map((name) => {
-  //   return {count: 1, name: '.'+name}
-  // })
-  // .reduce((a, b) => {
-  //   a[b.name] = (a[b.name] || 0) + b.count;
-  //   return a;
-  // }, {})
-  // return(uniq);
-  throw new NotImplementedError('Not implemented');
-
+  strDNS.forEach((matrixstring) => {
+    for (let i = 0; i < matrixstring.length; i++) {
+      domain.push(matrixstring[i]);
+    }
+  });
+  
+  let uniq = domain.map((name) => {
+    return {count: 1, name: '.'+name}
+  })
+  .reduce((a, b) => {
+    a[b.name] = (a[b.name] || 0) + b.count;
+    return a;
+  }, {})
+  return(uniq);
 }
 
 module.exports = {
